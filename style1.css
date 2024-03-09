@@ -1,0 +1,45 @@
+h1{
+	font-family:Times New Roman;
+	text-align:center;
+	color:blue;
+}
+body{
+	background-color:#D2E9F7;
+	top:10px;
+	bottom:10px;
+	right:10px;
+	left:10px;
+	text-align:center;
+}
+table{
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+}
+div{
+	text-align:center;
+	left:40px;
+}
+img{
+	float:center;
+}
+.responsive{
+    width: 50%;
+    height: auto;
+}
+input{
+	top:0px;
+	float:right;
+}
+
+footer{
+	text-align:center;
+	size:10px;
+	color:#052274;
+	bottom:0px;
+	position:fixed;
+	background:#47DBF3;
+	right:0px;
+	width:100%;
+}
