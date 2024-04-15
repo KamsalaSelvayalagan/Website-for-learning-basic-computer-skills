@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home Page</title>
-	<link rel="stylesheet" type="text/css" href="style1.css">
-	<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Microsoft Office</title>
+    <link rel="stylesheet" href="new.css">
+    <style>
 		#firstimg{
 		display: block;
 		margin-left: auto;
@@ -22,20 +24,32 @@
 	</style>
 </head>
 <body>
-	<p><a href="signin.html"><input type="button" onclick="clickevent()" value="Sign in" target="_blank"></a></p>
-	<h1><font size="7"> Computer basic skills</h1></font> </h1>
-	
-	<p><h2>Learn Microsoft Word, Microsoft Excel, Microsoft Powerpoint and Microsoft Access.</h2></p>
+    <header>
+        <h1>Learn Microsoft Office</h1>
+        <nav>
+            <ul>
+                <li><a href="new.html">Home</a></li>
+                <li><a href="word.html" target="_blank">Word</a></li>
+                <li><a href="excel.html" target="_blank">Excel</a></li>
+                <li><a href="access.html" target="_blank">Access</a></li>
+                <li><a href="powerpoint.html" target="_blank">PowerPoint</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p><a href="login.html"><input type="button" onclick="clickevent()" value="Sign in" target="_blank"></a></p>
+    <h1><font size="7"> Computer basic skills</h1></font> </h1>
+    <p><h2>Learn Microsoft word, Microsoft Excel, Microsoft Powerpoint and Microsoft Access.</h2></p>
 	<p><h3>Learn the basic skills of computer system</h3></p>
 	<img src="image1.jpg" alt="Microsoft office" id="firstimg" class="responsive">
-	
-	<h3><p>Start your basic computer skills with us....</p></h3>
+    <h3><p>Start your basic computer skills with us....</p></h3>
 	
 	<div class="container">
-		<iframe src="signin.html" height="200" width="400" title="Iframe Signin" class="responsive"></iframe>
+		<iframe src="loginPage.html" height="200" width="400" title="Iframe Signin" class="responsive"></iframe>
 	</div>
 	
 	<p><font size="5"> Begin your computer skills from here!</font></p>
-	<footer>&copy; 2024</footer>
+    <footer>
+        <p>&copy; 2024 Learn Microsoft Office</p>
+    </footer>
 </body>
 </html>
