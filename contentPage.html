@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Page</title>
+    <title>Welcome | Learn Microsoft Office</title>
     <link rel="stylesheet" type="text/css" href="new.css">
-    <style>
-		#firstimg{
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 40%;
-		border-top-left-radius: 15px;
-		border-bottom-right-radius: 15px;
-	}
-	.container {
-		float:center;
-		position: relative;
-		width: 100%;
-		overflow: hidden;
-		padding-top: 2%;
-	}
-	</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script>
+        // Simple fade-in scroll animation
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (position < screenPosition) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </head>
+
 <body>
     <header>
-        <h1>Learn Microsoft Office</h1>
+        <div class="logo">📘 Learn Microsoft Office</div>
         <nav>
             <ul>
                 <li><a href="Home.html">Home</a></li>
@@ -37,16 +36,72 @@
             </ul>
         </nav>
     </header>
-    <h1><font size="7"> Computer basic skills</h1></font> </h1>
-    <p><h2>Learn Microsoft word, Microsoft Excel, Microsoft Powerpoint and Microsoft Access.</h2></p>
-	<p><h3>Learn the basic skills of computer system</h3></p>
-	<img src="image1.jpg" alt="Microsoft office" id="firstimg">
-    <h3><p>Start your basic computer skills with us....</p></h3>
 
-	
-	<p><font size="5"> Begin your computer skills from here!</font></p>
+    <!-- Welcome Section -->
+    <section class="welcome-section fade-in">
+        <h1>Welcome to Your Learning Dashboard</h1>
+        <p>Congratulations! You’ve successfully signed in. Begin your learning journey and explore Microsoft Word, Excel, PowerPoint, and Access with interactive lessons and examples.</p>
+        <img src="image1.jpg" alt="Microsoft Office Tools" class="welcome-img">
+    </section>
+
+    <!-- Course Section -->
+    <section class="course-section fade-in">
+        <h2>Start Learning</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <img src="word.png" alt="Microsoft Word">
+                <h3>Microsoft Word</h3>
+                <p>Learn to create professional documents, letters, and reports with ease.</p>
+                <a href="word.html" target="_blank" class="btn">Start Word</a>
+            </div>
+
+            <div class="course-card">
+                <img src="excel.png" alt="Microsoft Excel">
+                <h3>Microsoft Excel</h3>
+                <p>Master formulas, charts, and data analysis tools for productivity.</p>
+                <a href="Excel.html" target="_blank" class="btn">Start Excel</a>
+            </div>
+
+            <div class="course-card">
+                <img src="powerpoint.png" alt="Microsoft PowerPoint">
+                <h3>Microsoft PowerPoint</h3>
+                <p>Create dynamic presentations with animations and visual effects.</p>
+                <a href="powerPoint.html" target="_blank" class="btn">Start PowerPoint</a>
+            </div>
+
+            <div class="course-card">
+                <img src="access.png" alt="Microsoft Access">
+                <h3>Microsoft Access</h3>
+                <p>Understand databases and learn to organize information efficiently.</p>
+                <a href="Access.html" target="_blank" class="btn">Start Access</a>
+            </div>
+        </div>
+    </section>
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top"><img src="up-arrow.png" alt="Up"></button>
+        
+        <script>
+        
+            window.onscroll = function() {scrollFunction()};
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("scrollToTopBtn").style.display = "block";
+                    } else {
+                        document.getElementById("scrollToTopBtn").style.display = "none";
+                }
+            }
+
+            
+                function scrollToTop() {
+                    document.body.scrollTop = 0; 
+                    document.documentElement.scrollTop = 0; 
+                }
+                
+        </script>
+
     <footer>
-        <p>&copy; 2024 Learn Microsoft Office</p>
+        <p>&copy; 2025 Learn Microsoft Office | Empowering Students with Skills</p>
     </footer>
 </body>
 </html>
