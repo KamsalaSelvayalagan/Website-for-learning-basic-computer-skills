@@ -1,55 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Learn Microsoft Office</title>
     <link rel="stylesheet" type="text/css" href="new.css">
-    <style>
-		#firstimg{
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 40%;
-		border-top-left-radius: 15px;
-		border-bottom-right-radius: 15px;
-	}
-	.container {
-		float:center;
-		position: relative;
-		width: 100%;
-		overflow: hidden;
-		padding-top: 1%;
-	}
-	header{
-		position: relative;
-	}
-	
-	</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script>
+        // Simple animation for scroll effects
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (position < screenPosition) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </head>
+
 <body>
     <header>
-        <h1>Learn Microsoft Office</h1>
+        <div class="logo">💻 Learn Microsoft Office</div>
         <nav>
             <ul>
+                <li><a href="Home.html">Home</a></li>
                 <li><a href="About.html" target="_blank">About</a></li>
+                <li><a href="signupPage.html">Sign In</a></li>
             </ul>
         </nav>
     </header>
-    <p><a href="signupPage.html" ><input  type="button" onclick="clickevent()" value="Sign in" ></a></p>
-    <h1><font size="7"> Computer basic skills</h1></font> </h1>
-    <p><h2>Learn Microsoft word, Microsoft Excel, Microsoft Powerpoint and Microsoft Access.</h2></p>
-	<p><h3>Learn the basic skills of computer system</h3></p>
-	<img src="image1.jpg" alt="Microsoft office" id="firstimg">
-    <h3><p>Start your basic computer skills with us....</p></h3>
-	
-	<div class="container">
-		<iframe src="loginPage.html" height="200" width="400" title="Iframe Signin" ></iframe>
-	</div>
-	
-	<p><font size="5"> Begin your computer skills from here!</font></p>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master the Basics of Microsoft Office</h1>
+            <p>Learn Microsoft Word, Excel, PowerPoint, and Access — all in one platform designed for students.</p>
+            <a href="signupPage.html" class="btn">Get Started</a>
+        </div>
+        <img src="image1.jpg" alt="Microsoft Office" class="hero-img fade-in">
+    </section>
+
+    <section class="about fade-in">
+        <h2>Why Learn With Us?</h2>
+        <p>We make learning simple and interactive. Whether you're just starting or brushing up your skills, our lessons and exercises help you gain confidence in using Microsoft Office effectively.</p>
+    </section>
+
+    <section class="features fade-in">
+        <div class="feature">
+            <h3>📘 Microsoft Word</h3>
+            <p>Create professional documents and reports with ease.</p>
+        </div>
+        <div class="feature">
+            <h3>📊 Microsoft Excel</h3>
+            <p>Master data handling, formulas, and charts.</p>
+        </div>
+        <div class="feature">
+            <h3>📽️ PowerPoint</h3>
+            <p>Design eye-catching presentations and visual slides.</p>
+        </div>
+        <div class="feature">
+            <h3>🗃️ Access</h3>
+            <p>Organize and manage data efficiently using databases.</p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Learn Microsoft Office</p>
+        <p>&copy; 2025 Learn Microsoft Office | Designed by Students for Students</p>
     </footer>
 </body>
 </html>
