@@ -7,6 +7,19 @@
     <link rel="stylesheet" type="text/css" href="new.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+    <script>
+        // Simple animation for scroll effects
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (position < screenPosition) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -53,28 +66,6 @@
             <p>Organize and manage data efficiently using databases.</p>
         </div>
     </section>
-    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top"><img src="up-arrow.png" alt="Up"></button>
-	
-	<script>
-	
-		window.onscroll = function() {scrollFunction()};
-
-			function scrollFunction() {
-				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-					document.getElementById("scrollToTopBtn").style.display = "block";
-				} else {
-					document.getElementById("scrollToTopBtn").style.display = "none";
-			}
-		}
-
-		
-			function scrollToTop() {
-				document.body.scrollTop = 0; 
-				document.documentElement.scrollTop = 0; 
-			}
-			
-	</script>
-
 
     <footer>
         <p>&copy; 2025 Learn Microsoft Office | Designed by Students for Students</p>

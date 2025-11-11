@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn Microsoft Excel 2016</title>
-  <link rel="stylesheet" href="new.css" />
-</head>
-<body>
-  <header>
-    <h1>Learn Microsoft Office</h1>
-    <nav>
-      <ul>
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="word.html">Word</a></li>
-        <li><a href="Excel.html" class="active">Excel</a></li>
-        <li><a href="Access.html">Access</a></li>
-        <li><a href="powerPoint.html">PowerPoint</a></li>
-        <li><a href="About.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Excel Learning</title>
+    <link rel="stylesheet" href="new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <main class="content-section">
-    <section class="intro">
-      <img src="excel.png" alt="Excel logo" class="main-image" />
-      <h2>Learn Microsoft Excel 2016</h2>
-      <p>
-        Microsoft Excel is a spreadsheet application developed by Microsoft. It’s part of the Microsoft Office suite and is used to organize, analyze, and visualize data. 
-        Learn the basic tools and steps to master Excel 2016 below.
-      </p>
+    <script>
+        // Scroll animation for fade-in effects
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (position < screenPosition) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">📗 Learn Microsoft Office</div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="word.html" target="_blank">Word</a></li>
+                <li><a href="Excel.html">Excel</a></li>
+                <li><a href="Access.html" target="_blank">Access</a></li>
+                <li><a href="powerPoint.html" target="_blank">PowerPoint</a></li>
+                <li><a href="About.html" target="_blank">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <h1>Learn Microsoft Excel 2016</h1>
+            <p>Master data organization, analysis, and visualization using Microsoft Excel. Follow these step-by-step lessons to explore formulas, charts, and spreadsheet management effectively.</p>
+        </div>
+        <img src="excel.png" alt="Microsoft Excel" class="hero-img">
     </section>
 
-    <!-- Step 1 -->
-    <div class="step">
-      <div class="step-text left">
-        <h3>Step 1: Open Microsoft Excel 2016 and select a blank workbook</h3>
-        <p>Start Excel and choose “Blank Workbook” to begin your spreadsheet project.</p>
-      </div>
-      <div class="step-image right">
-        <img src="e1.png" alt="Excel Step 1" />
-      </div>
-    </div>
+    <!-- Learning Steps -->
+    <section class="lesson-section">
+        <div class="lesson-step fade-in">
+            <div class="lesson-text">
+                <h2>Step 1: Open Microsoft Excel 2016</h2>
+                <p>Launch Microsoft Excel and choose “Blank Workbook” to start creating a spreadsheet.</p>
+            </div>
+            <img src="e1.png" alt="Open Microsoft Excel">
+        </div>
 
-    <!-- Step 2 -->
-    <div class="step">
-      <div class="step-image left">
-        <img src="e2.png" alt="Excel Step 2" />
-      </div>
-      <div class="step-text right">
-        <h3>Step 2: Create and format spreadsheets</h3>
-        <p>Use cells to enter data, apply formulas, and style your sheet for better readability.</p>
-      </div>
-    </div>
+        <div class="lesson-step fade-in reverse">
+            <img src="e2.png" alt="Spreadsheet Creation">
+            <div class="lesson-text">
+                <h2>Step 2: Create and Format Spreadsheets</h2>
+                <p>Use rows and columns to organize data efficiently. Apply formatting options like borders, alignment, and cell colors for clarity.</p>
+            </div>
+        </div>
 
-    <!-- Step 3 -->
-    <div class="step">
-      <div class="step-text left">
-        <h3>Step 3: Adjust page layout using the Layout tab</h3>
-        <p>Modify margins, orientation, and paper size for printing and better presentation.</p>
-      </div>
-      <div class="step-image right">
-        <img src="e3.png" alt="Excel Step 3" />
-      </div>
-    </div>
+        <div class="lesson-step fade-in">
+            <div class="lesson-text">
+                <h2>Step 3: Page Layout Tab</h2>
+                <p>In the Page Layout tab, adjust page margins, colors, size, and orientation to prepare your document for printing.</p>
+            </div>
+            <img src="e3.png" alt="Page Layout Tab">
+        </div>
 
-    <!-- Step 4 -->
-    <div class="step">
-      <div class="step-image left">
-        <img src="e4.png" alt="Excel Step 4" />
-      </div>
-      <div class="step-text right">
-        <h3>Step 4: Use formulas and functions</h3>
-        <p>In the “Formulas” tab, use built-in functions to automate calculations easily.</p>
-      </div>
-    </div>
+        <div class="lesson-step fade-in reverse">
+            <img src="e4.png" alt="Formula Tab">
+            <div class="lesson-text">
+                <h2>Step 4: Formula Tab</h2>
+                <p>Use built-in functions and formulas like SUM, AVERAGE, and IF to perform quick and accurate calculations.</p>
+            </div>
+        </div>
 
-    <!-- Step 5 -->
-    <div class="step">
-      <div class="step-text left">
-        <h3>Step 5: Import data from external sources</h3>
-        <p>Use the “Data” tab to import data from Access, the web, or text files.</p>
-      </div>
-      <div class="step-image right">
-        <img src="e5.png" alt="Excel Step 5" />
-      </div>
-    </div>
-  </main>
+        <div class="lesson-step fade-in">
+            <div class="lesson-text">
+                <h2>Step 5: Data Tab</h2>
+                <p>Import data from sources such as Access, the web, or text files using options available in the Data tab. You can also sort, filter, and analyze data here.</p>
+            </div>
+            <img src="e5.png" alt="Data Tab">
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2024 Learn Microsoft Office</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Learn Microsoft Office | Your Path to Productivity</p>
+    </footer>
 </body>
 </html>
