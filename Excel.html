@@ -24,7 +24,7 @@
 
 <body>
     <header>
-        <div class="logo">📗 Learn Microsoft Office</div>
+        <div class="logo">Learn Microsoft Office</div>
         <nav>
             <ul>
                 <li><a href="Home.html">Home</a></li>
@@ -88,7 +88,27 @@
             <img src="e5.png" alt="Data Tab">
         </div>
     </section>
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top"><img src="up-arrow.png" alt="Up"></button>
+	
+	<script>
+	
+		window.onscroll = function() {scrollFunction()};
 
+			function scrollFunction() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("scrollToTopBtn").style.display = "block";
+				} else {
+					document.getElementById("scrollToTopBtn").style.display = "none";
+			}
+		}
+
+		
+			function scrollToTop() {
+				document.body.scrollTop = 0; 
+				document.documentElement.scrollTop = 0; 
+			}
+			
+	</script>
     <footer>
         <p>&copy; 2025 Learn Microsoft Office | Your Path to Productivity</p>
     </footer>

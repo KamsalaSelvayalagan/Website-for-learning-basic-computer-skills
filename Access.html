@@ -1,88 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access</title>
+    <title>Microsoft Access Learning</title>
     <link rel="stylesheet" href="new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script>
+        // Scroll animation for fade-in effects
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (position < screenPosition) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </head>
+
 <body>
     <header>
-        <h1>Learn Microsoft Office</h1>
+        <div class="logo">Learn Microsoft Office</div>
         <nav>
             <ul>
                 <li><a href="Home.html">Home</a></li>
                 <li><a href="word.html" target="_blank">Word</a></li>
                 <li><a href="Excel.html" target="_blank">Excel</a></li>
-                <li><a href="Access.html" target="_blank">Access</a></li>
+                <li><a href="Access.html">Access</a></li>
                 <li><a href="powerPoint.html" target="_blank">PowerPoint</a></li>
                 <li><a href="About.html" target="_blank">About</a></li>
             </ul>
         </nav>
     </header>
-    
-    <img src="access.png" alt="Access image" class="images">
 
-    <section>
-        <h2>Learn Microsoft Access 2016</h2>
-        <p>Microsoft Access is a database management system (DBMS) from Microsoft that combines the relational Microsoft Jet Database Engine with a graphical user interface and software-development tools. It is a member of the Microsoft Office suite of applications, included in the professional and higher editions. In this section, you will find resources to help you learn Microsoft Access 2016.</p>
-        <div class="step">
-            <div class="text1">
-                <p><h2>Step 1: Open Microsoft Access 2016 and select blank desktop database</h2></p>
-            </div>
-            <div class="img1">
-                <img src="a1.png" alt="first step">
-            </div>
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <h1>Learn Microsoft Access 2016</h1>
+            <p>Microsoft Access is a database management system (DBMS) that combines a relational database engine with a user-friendly interface and development tools. Follow these simple steps to understand how to create and manage databases effectively.</p>
         </div>
-    
-        <div class="step">
-            <div class="img2">
-                <img src="a1_1.png" alt="second step">
-            </div>
-            <div class="text">
-                <p><h2>Step 2: Select folder, change file name and click create</h2></p>
-            </div>
-            
-        </div>
-        <div class="step">
-            <div class="text1">
-                <p><h2>Step 3: Click view in fiealds tab and click design view then save table name and create table headings and data types</h2></p>
-            </div>
-            <div class="img1">
-                <img src="a2.png" alt="first step">
-            </div>
-        </div>
-    
-        <div class="step">
-            <div class="img2">
-                <img src="a3.png" alt="second step">
-            </div>
-            <div class="text">
-                <p><h2>Step 4: In this home tab, you can adjust font, align, sort, borders, filter etc </h2></p>
-            </div>
-            
-        </div>
-    
-        <div class="step">
-            <div class="text1">
-                <p><h2>Step 5: You can create tables, Query, Forms, Reports using the options in create tab</h2></p>
-            </div>
-            <div class="img1">
-                <img src="a4.png" alt="first step">
-            </div>
-        </div>
-    
-        <div class="step">
-            <div class="img2">
-                <img src="a5.png" alt="second step">
-            </div>
-            <div class="text">
-                <p><h2>Step 6: Can design the word document using design tab (add water mark, page color, page border etc )</h2></p>
-            </div>
+        <img src="access.png" alt="Microsoft Access" class="hero-img">
     </section>
 
+    <!-- Learning Steps -->
+    <section class="lesson-section">
+        <div class="lesson-step fade-in">
+            <div class="lesson-text">
+                <h2>Step 1: Open Microsoft Access 2016</h2>
+                <p>Select “Blank Desktop Database” to begin creating a new database.</p>
+            </div>
+            <img src="a1.png" alt="Open Microsoft Access">
+        </div>
+
+        <div class="lesson-step fade-in reverse">
+            <img src="a1_1.png" alt="Save Access File">
+            <div class="lesson-text">
+                <h2>Step 2: Create and Save Database</h2>
+                <p>Choose a folder, enter a file name, and click “Create” to save your database file.</p>
+            </div>
+        </div>
+
+        <div class="lesson-step fade-in">
+            <div class="lesson-text">
+                <h2>Step 3: Create Table and Define Fields</h2>
+                <p>Switch to Design View, name your table, and define fields with their respective data types for storing information.</p>
+            </div>
+            <img src="a2.png" alt="Table Design View">
+        </div>
+
+        <div class="lesson-step fade-in reverse">
+            <img src="a3.png" alt="Home Tab in Access">
+            <div class="lesson-text">
+                <h2>Step 4: Explore the Home Tab</h2>
+                <p>Use the Home tab to format text, sort data, apply filters, and manage records efficiently.</p>
+            </div>
+        </div>
+
+        <div class="lesson-step fade-in">
+            <div class="lesson-text">
+                <h2>Step 5: Create Tab Features</h2>
+                <p>Use the Create tab to design Tables, Queries, Forms, and Reports that help organize and present data.</p>
+            </div>
+            <img src="a4.png" alt="Create Tab">
+        </div>
+
+        <div class="lesson-step fade-in reverse">
+            <img src="a5.png" alt="Design Tab">
+            <div class="lesson-text">
+                <h2>Step 6: Design Tab Options</h2>
+                <p>Use the Design tab to enhance the look and structure of your database objects for better usability.</p>
+            </div>
+        </div>
+    </section>
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top"><img src="up-arrow.png" alt="Up"></button>
+	
+	<script>
+	
+		window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("scrollToTopBtn").style.display = "block";
+				} else {
+					document.getElementById("scrollToTopBtn").style.display = "none";
+			}
+		}
+
+		
+			function scrollToTop() {
+				document.body.scrollTop = 0; 
+				document.documentElement.scrollTop = 0; 
+			}
+			
+	</script>
     <footer>
-        <p>&copy; 2024 Learn Microsoft Office</p>
+        <p>&copy; 2025 Learn Microsoft Office | Your Path to Productivity</p>
     </footer>
 </body>
 </html>

@@ -7,6 +7,22 @@
     <link rel="stylesheet" type="text/css" href="new.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+    <style>
+    /* Style for images inside h3 (feature icons) */
+    .features h3 img {
+        width: 40px;          
+        height: 40px;         
+        vertical-align: middle; 
+        margin-right: 10px;  
+        border-radius: 8px;   
+        object-fit: contain;  
+        
+    }
+
+   
+</style>
+
+
     <script>
         // Simple animation for scroll effects
         window.addEventListener('scroll', () => {
@@ -24,7 +40,7 @@
 
 <body>
     <header>
-        <div class="logo">💻 Learn Microsoft Office</div>
+        <div class="logo">Learn Microsoft Office</div>
         <nav>
             <ul>
                 <li><a href="Home.html">Home</a></li>
@@ -50,19 +66,19 @@
 
     <section class="features fade-in">
         <div class="feature">
-            <h3>📘 Microsoft Word</h3>
+            <h3><img src="word.png" alt="Word">Microsoft Word</h3>
             <p>Create professional documents and reports with ease.</p>
         </div>
         <div class="feature">
-            <h3>📊 Microsoft Excel</h3>
+            <h3><img src="excel.png" alt="Excel"> Excel</h3>
             <p>Master data handling, formulas, and charts.</p>
         </div>
         <div class="feature">
-            <h3>📽️ PowerPoint</h3>
+            <h3><img src="powerpoint.png" alt="PowerPoint">PowerPoint</h3>
             <p>Design eye-catching presentations and visual slides.</p>
         </div>
         <div class="feature">
-            <h3>🗃️ Access</h3>
+            <h3><img src="access.png" alt="Access">Access</h3>
             <p>Organize and manage data efficiently using databases.</p>
         </div>
     </section>
