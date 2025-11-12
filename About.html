@@ -8,16 +8,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Icon styling for features */
-        .features h3 img {
-            width: 40px;
-            height: 40px;
-            vertical-align: middle;
-            margin-right: 10px;
-            border-radius: 8px;
-            object-fit: contain;
+        /* ===== General Styling ===== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
         }
 
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #ffcc00;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #eef2ff, #ffffff);
+        }
+
+        .hero img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .hero-content h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #004aad;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #444;
+        }
+
+        /* ===== About Content ===== */
         .about-content {
             max-width: 900px;
             margin: 40px auto;
@@ -29,19 +91,94 @@
         .about-content h3 {
             margin-top: 30px;
             font-weight: 600;
-            color: #333;
+            color: #004aad;
         }
 
         .about-content p {
             margin-bottom: 15px;
         }
 
-        .hero img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-top: 20px;
+        .about-content ul {
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .about-content ul li {
+            margin-bottom: 10px;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact {
+            background-color: #f4f7ff;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 2px solid #dce3f0;
+            margin-top: 40px;
+        }
+
+        .contact h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #004aad;
+        }
+
+        .contact p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .contact a {
+            color: #004aad;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+            color: #002b80;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #002b80;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        /* ===== Animation (Fade-in) ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 22px;
+            }
+
+            .about-content {
+                padding: 15px;
+            }
         }
     </style>
 
@@ -61,17 +198,19 @@
 </head>
 
 <body>
+    <!-- ===== Header ===== -->
     <header>
         <div class="logo">Learn Microsoft Office</div>
         <nav>
             <ul>
                 <li><a href="Home.html">Home</a></li>
-                <li><a href="About.html" target="_blank" class="active">About</a></li>
+                <li><a href="About.html" class="active">About</a></li>
                 <li><a href="signupPage.html">Sign In</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- ===== Hero Section ===== -->
     <section class="hero">
         <img src="microsoft.jpg" alt="Microsoft Office" class="hero-img">
         <div class="hero-content">
@@ -80,6 +219,7 @@
         </div>
     </section>
 
+    <!-- ===== About Section ===== -->
     <section class="about fade-in">
         <div class="about-content">
             <h3>About Microsoft Office</h3>
@@ -102,25 +242,20 @@
         </div>
     </section>
 
-    <section class="features fade-in">
-        <div class="feature">
-            <h3><img src="word.png" alt="Word">Microsoft Word</h3>
-            <p>Create professional documents and reports with ease.</p>
-        </div>
-        <div class="feature">
-            <h3><img src="excel.png" alt="Excel">Excel</h3>
-            <p>Master data handling, formulas, and charts.</p>
-        </div>
-        <div class="feature">
-            <h3><img src="powerpoint.png" alt="PowerPoint">PowerPoint</h3>
-            <p>Design eye-catching presentations and visual slides.</p>
-        </div>
-        <div class="feature">
-            <h3><img src="access.png" alt="Access">Access</h3>
-            <p>Organize and manage data efficiently using databases.</p>
-        </div>
+    <!-- ===== Contact Section ===== -->
+    <section class="contact fade-in">
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> support@learnmsoffice.com</p>
+        <p><strong>Phone:</strong> +94 71 234 5678</p>
+        <p><strong>Address:</strong> 123 Tech Street, Colombo, Sri Lanka</p>
+        <p>Follow us on 
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">LinkedIn</a>
+        </p>
     </section>
 
+    <!-- ===== Footer ===== -->
     <footer>
         <p>&copy; 2025 Learn Microsoft Office | Designed by Students for Students</p>
     </footer>
