@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Learn Microsoft Office</title>
+    <title>Sign Up | Learn Microsoft Office</title>
     <link rel="stylesheet" href="signupPage.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -17,43 +17,9 @@
     </nav>
 
     <div class="container">
-        <h2 id="formTitle" style="text-align:center; color:#0056b3;">Login to Your Account</h2>
+        <h2 style="text-align:center; color:#0056b3;">Create Your Account</h2>
 
-        <!-- LOGIN FORM -->
-        <form id="loginForm" method="post" action="login.php">
-            <div class="form-group">
-                <label for="loginUsername">Username</label>
-                <input type="text" id="loginUsername" name="userName" placeholder="Enter your username" required>
-            </div>
-
-            <div class="form-group" style="position:relative;">
-                <label for="loginPass">Password</label>
-                <input type="password" id="loginPass" name="pass" placeholder="Enter your password" required>
-                <span class="password-toggle" onclick="togglePassword('loginPass', this)"></span>
-            </div>
-
-            <div class="form-group" style="display:flex; align-items:center; gap:8px;">
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember" style="margin:0;">Remember me</label>
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn">Login</button>
-            </div>
-
-            <div class="form-group" style="text-align:center;">
-                <p>Or login with <a href="#">Facebook</a> / <a href="#">Google</a></p>
-            </div>
-
-            <div class="form-group" style="text-align:center;">
-                <p>Not a member? <a href="#" id="signupLink">Sign up</a></p>
-            </div>
-        </form>
-
-        <!-- SIGNUP FORM (hidden initially) -->
-        <form id="signupForm" method="post" action="signup.php" style="display:none;">
-            <h2 style="text-align:center; color:#0056b3;">Create Your Account</h2>
-
+        <form id="signupForm" method="post">
             <div class="form-group">
                 <label for="newUserName">Username</label>
                 <input type="text" id="newUserName" name="newUserName" required>
@@ -82,11 +48,11 @@
             <div id="passwordMessage" style="color:red; text-align:center; margin-bottom:10px;"></div>
 
             <div class="form-group">
-                <button type="submit" class="btn" onclick="return validatePassword();">Sign Up</button>
+                <button type="submit" class="btn">Sign Up</button>
             </div>
 
             <div class="form-group" style="text-align:center;">
-                <p>Already have an account? <a href="#" id="loginLink">Sign in</a></p>
+                <p>Already have an account? <a href="login.html" id="loginLink">Sign in</a></p>
             </div>
         </form>
     </div>
@@ -96,22 +62,7 @@
     </footer>
 
     <script>
-        // Toggle between Login and Signup
-        document.getElementById('signupLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('signupForm').style.display = 'block';
-            document.getElementById('formTitle').innerText = 'Sign Up';
-        });
-
-        document.getElementById('loginLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('signupForm').style.display = 'none';
-            document.getElementById('loginForm').style.display = 'block';
-            document.getElementById('formTitle').innerText = 'Login to Your Account';
-        });
-
-        // Password toggle
+        // Toggle password visibility
         function togglePassword(inputId, icon) {
             const input = document.getElementById(inputId);
             if (input.type === "password") {
@@ -163,6 +114,33 @@
             if (!isValid) document.getElementById("passwordMessage").innerHTML = messages.join("<br>");
             return isValid;
         }
+
+        // Handle signup
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!validatePassword()) {
+                return false;
+            }
+
+            const password = document.getElementById("password").value.trim();
+            const confirmPass = document.getElementById("confirmPass").value.trim();
+            const username = document.getElementById("newUserName").value.trim();
+            const passwordMessage = document.getElementById("passwordMessage");
+
+            if (!username) {
+                passwordMessage.innerHTML = "Please enter a username.";
+                return false;
+            }
+
+            if (password !== confirmPass) {
+                passwordMessage.innerHTML = "Passwords do not match.";
+                return false;
+            }
+
+            // All validations passed
+            window.location.href = "contentPage.html";
+        });
     </script>
 </body>
 </html>

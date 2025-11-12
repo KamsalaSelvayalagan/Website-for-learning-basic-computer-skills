@@ -17,10 +17,9 @@
     </nav>
 
     <div class="container">
-        <h2 id="formTitle" style="text-align:center; color:#0056b3;">Login to Your Account</h2>
+        <h2 style="text-align:center; color:#0056b3;">Login to Your Account</h2>
 
-        <!-- LOGIN FORM -->
-        <form id="loginForm" method="post" action="login.php">
+        <form id="loginForm">
             <div class="form-group">
                 <label for="loginUsername">Username</label>
                 <input type="text" id="loginUsername" name="userName" placeholder="Enter your username" required>
@@ -31,6 +30,8 @@
                 <input type="password" id="loginPass" name="pass" placeholder="Enter your password" required>
                 <span class="password-toggle" onclick="togglePassword('loginPass', this)"></span>
             </div>
+
+            <div id="passwordMessage" style="color:red; text-align:center; margin-bottom:10px;"></div>
 
             <div class="form-group" style="display:flex; align-items:center; gap:8px;">
                 <input type="checkbox" name="remember" id="remember">
@@ -46,47 +47,7 @@
             </div>
 
             <div class="form-group" style="text-align:center;">
-                <p>Not a member? <a href="#" id="signupLink">Sign up</a></p>
-            </div>
-        </form>
-
-        <!-- SIGNUP FORM (hidden initially) -->
-        <form id="signupForm" method="post" action="signup.php" style="display:none;">
-            <h2 style="text-align:center; color:#0056b3;">Create Your Account</h2>
-
-            <div class="form-group">
-                <label for="newUserName">Username</label>
-                <input type="text" id="newUserName" name="newUserName" required>
-            </div>
-
-            <div class="form-group" style="position:relative;">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="newPass" placeholder="Create password" required>
-                <span class="password-toggle" onclick="togglePassword('password', this)"></span>
-            </div>
-
-            <div id="message">
-                <h3>Password must contain the following:</h3>
-                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                <p id="number" class="invalid">A <b>number</b></p>
-                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-            </div>
-
-            <div class="form-group" style="position:relative;">
-                <label for="confirmPass">Confirm Password</label>
-                <input type="password" id="confirmPass" name="confirmPass" placeholder="Confirm password" required>
-                <span class="password-toggle" onclick="togglePassword('confirmPass', this)"></span>
-            </div>
-
-            <div id="passwordMessage" style="color:red; text-align:center; margin-bottom:10px;"></div>
-
-            <div class="form-group">
-                <button type="submit" class="btn" onclick="return validatePassword();">Sign Up</button>
-            </div>
-
-            <div class="form-group" style="text-align:center;">
-                <p>Already have an account? <a href="#" id="loginLink">Sign in</a></p>
+                <p>Not a member? <a href="signupPage.html">Sign up</a></p>
             </div>
         </form>
     </div>
@@ -96,22 +57,7 @@
     </footer>
 
     <script>
-        // Toggle between Login and Signup
-        document.getElementById('signupLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('signupForm').style.display = 'block';
-            document.getElementById('formTitle').innerText = 'Sign Up';
-        });
-
-        document.getElementById('loginLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('signupForm').style.display = 'none';
-            document.getElementById('loginForm').style.display = 'block';
-            document.getElementById('formTitle').innerText = 'Login to Your Account';
-        });
-
-        // Password toggle
+        // Toggle password visibility
         function togglePassword(inputId, icon) {
             const input = document.getElementById(inputId);
             if (input.type === "password") {
@@ -123,46 +69,35 @@
             }
         }
 
-        // Password validation
-        var myInput = document.getElementById("password");
-        var letter = document.getElementById("letter");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
+        // Handle Login
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop form refresh
 
-        myInput.onfocus = function() {
-            document.getElementById("message").style.display = "block";
-        }
-        myInput.onblur = function() {
-            document.getElementById("message").style.display = "none";
-        }
-        myInput.onkeyup = function() {
-            var lowerCaseLetters = /[a-z]/g;
-            letter.classList.toggle("valid", myInput.value.match(lowerCaseLetters));
-            letter.classList.toggle("invalid", !myInput.value.match(lowerCaseLetters));
+            const username = document.getElementById("loginUsername").value.trim();
+            const password = document.getElementById("loginPass").value.trim();
+            const passwordMessage = document.getElementById("passwordMessage");
 
-            var upperCaseLetters = /[A-Z]/g;
-            capital.classList.toggle("valid", myInput.value.match(upperCaseLetters));
-            capital.classList.toggle("invalid", !myInput.value.match(upperCaseLetters));
+            // Empty fields check
+            if (username === "" || password === "") {
+                passwordMessage.innerHTML = "Please enter both username and password.";
+                return;
+            }
 
-            var numbers = /[0-9]/g;
-            number.classList.toggle("valid", myInput.value.match(numbers));
-            number.classList.toggle("invalid", !myInput.value.match(numbers));
+            // Password strength check (same logic as signup)
+            const hasLower = /[a-z]/.test(password);
+            const hasUpper = /[A-Z]/.test(password);
+            const hasNumber = /[0-9]/.test(password);
+            const hasLength = password.length >= 8;
 
-            length.classList.toggle("valid", myInput.value.length >= 8);
-            length.classList.toggle("invalid", myInput.value.length < 8);
-        }
+            if (!hasLower || !hasUpper || !hasNumber || !hasLength) {
+                passwordMessage.innerHTML = 
+                    "Password must include at least:<br>- One lowercase letter<br>- One uppercase letter<br>- One number<br>- Minimum 8 characters.";
+                return;
+            }
 
-        function validatePassword() {
-            let isValid = true;
-            let messages = [];
-            if (!letter.classList.contains("valid")) { messages.push("Password must contain a lowercase letter."); isValid = false; }
-            if (!capital.classList.contains("valid")) { messages.push("Password must contain an uppercase letter."); isValid = false; }
-            if (!number.classList.contains("valid")) { messages.push("Password must contain a number."); isValid = false; }
-            if (!length.classList.contains("valid")) { messages.push("Password must be at least 8 characters long."); isValid = false; }
-            if (!isValid) document.getElementById("passwordMessage").innerHTML = messages.join("<br>");
-            return isValid;
-        }
+            // All validations passed
+            window.location.href = "contentPage.html";
+        });
     </script>
 </body>
 </html>
